@@ -60,7 +60,7 @@ router.post('/update', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-  console.log(req.body.ID, req.body.password);
+  // console.log(req.body.ID, req.body.password);
   const user = new Ceiba(req.body.ID, req.body.password, (err) => {
     if(!err) {
       data[req.body.ID.toLowerCase()][req.body.sn] = {
@@ -70,7 +70,7 @@ router.post('/add', (req, res) => {
         content: req.body.content,
         done: req.body.done,
       };
-      console.log(data[req.body.ID.toLowerCase()][req.body.sn]);
+      // console.log(data[req.body.ID.toLowerCase()][req.body.sn]);
       res.json('done');
     } else {
       console.error(err);
